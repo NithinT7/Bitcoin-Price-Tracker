@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const bodyParser = require("body-parser"); 
-const URL = 'https://api.coindesk.com/v1/bpi/currentprice.json';
 
-router.use(bodyParser.json());
+const URL = 'https://api.coindesk.com/v1/bpi/currentprice.json';
+/**
+ * Route retrieving data from the Coindesk API.
+ */
 router.get('/main', async (req, res) => {
     try {
         const result = await axios.get(URL);
