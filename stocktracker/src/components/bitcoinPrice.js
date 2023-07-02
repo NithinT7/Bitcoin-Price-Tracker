@@ -18,7 +18,7 @@ class BitcoinPrice extends Component {
      */
     componentDidMount() {
         this.fetchBitcoinPrice(); // Fetch Bitcoin price initially
-        this.interval = setInterval(this.fetchBitcoinPrice, 10000); // Fetch Bitcoin price every 10 seconds
+        this.interval = setInterval(this.fetchBitcoinPrice, 10000); // Fetch Bitcoin price every 1 second
     }
 
     componentWillUnmount() {
@@ -35,7 +35,7 @@ class BitcoinPrice extends Component {
                 (data) => {
                     this.setState({
                         isLoaded: true,
-                        btc : Object.values(data.bpi.USD)
+                        btc: Object.values(data.bpi.USD)
                     });
                 },
                 
